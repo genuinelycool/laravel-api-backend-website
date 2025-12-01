@@ -15,7 +15,7 @@ Route::get('/dashboard', function () {
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 Route::post('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::get('/verify', [AdminController::class, 'ShowVerification'])->name('custom.verification.form');
-Route::post('/verify', [AdminController::class, 'VerificationVerify'])->name('verification.verify');
+Route::post('/verify', [AdminController::class, 'VerificationVerify'])->name('custom.verification.verify');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

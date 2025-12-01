@@ -55,7 +55,8 @@
                                         </div>
                                     @endif
 
-                                    <form method="POST" action="{{ route('verification.verify') }}" class="my-4">
+                                    <form method="POST" action="{{ route('custom.verification.verify') }}"
+                                        class="my-4">
                                         @csrf
 
                                         <div class="form-group mb-3">
