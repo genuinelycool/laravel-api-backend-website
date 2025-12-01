@@ -25,7 +25,7 @@
 
                             <div class="align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/images/users/user-11.jpg"
+                                    <img src="{{ !empty($profileData->image) ? url('upload/user_images/' . $profileData->image) : url('upload/no_image.jpg') }}"
                                         class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
 
                                     <div class="overflow-hidden ms-4">
@@ -35,8 +35,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
 
                             <div class="tab-pane pt-4" id="profile_setting" role="tabpanel">
                                 <div class="row">
@@ -53,22 +51,44 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="card-body">
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">First Name</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="Charles">
+                                                <form action="">
+                                                    <div class="card-body">
+                                                        <div class="form-group mb-3 row">
+                                                            <label class="form-label">Name</label>
+                                                            <div class="col-lg-12 col-xl-12">
+                                                                <input class="form-control" type="text" name="name"
+                                                                    value="{{ $profileData->name }}">
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="form-group mb-3 row">
-                                                        <label class="form-label">Last Name</label>
-                                                        <div class="col-lg-12 col-xl-12">
-                                                            <input class="form-control" type="text" value="Buncle">
+                                                        <div class="form-group mb-3 row">
+                                                            <label class="form-label">Email</label>
+                                                            <div class="col-lg-12 col-xl-12">
+                                                                <input class="form-control" type="email" name="email"
+                                                                    value="{{ $profileData->email }}">
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                </div><!--end card-body-->
+                                                        <div class="form-group mb-3 row">
+                                                            <label class="form-label">Profile Image</label>
+                                                            <div class="col-lg-12 col-xl-12">
+                                                                <input class="form-control" type="file" name="image">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group mb-3 row">
+                                                            <div class="col-lg-12 col-xl-12">
+                                                                <img src="{{ !empty($profileData->image) ? url('upload/user_images/' . $profileData->image) : url('upload/no_image.jpg') }}"
+                                                                    class="rounded-circle avatar-xxl img-thumbnail float-start"
+                                                                    alt="image profile">
+                                                            </div>
+                                                        </div>
+
+                                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+
+                                                    </div><!--end card-body-->
+                                                </form>
+
                                             </div>
                                         </div>
 
