@@ -57,4 +57,8 @@ class ProfileController extends Controller
             unlink($fullPath);
         }
     }
+
+    public function PasswordUpdate(Request $request) {
+        
+    }
 }

@@ -20,6 +20,7 @@ Route::post('/verify', [AdminController::class, 'VerificationVerify'])->name('cu
 Route::middleware('auth')->group(function () {
     Route::get('/admin/profile', [ProfileController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/profile/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
+    Route::post('/user/password/update', [ProfileController::class, 'PasswordUpdate'])->name('user.password.update');
 });
 
 require __DIR__ . '/auth.php';
