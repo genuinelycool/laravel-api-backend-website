@@ -27,14 +27,28 @@ class ProfileController extends Controller
         $data->name = $request->name;
         $data->email = $request->email;
 
+        $oldPhotoPath = $data->image;
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('upload/user_images'), $filename);
             $data->image = $filename;
+
+            if ($oldPhotoPath && $oldPhotoPath != $filename) {
+                $this->deleteOldImage($oldPhotoPath);
+            }
         }
 
         $data->save();
         return redirect()->back();
+    }
+
+    private function deleteOldImage(string $oldPhotoPath): void
+    {
+        $fullPath = public_path('upload/user_images/' . $oldPhotoPath);
+        if (file_exists($fullPath)) {
+            unlink($fullPath);
+        }
     }
 }
