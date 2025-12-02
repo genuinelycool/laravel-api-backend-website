@@ -41,7 +41,13 @@ class ProfileController extends Controller
         }
 
         $data->save();
-        return redirect()->back();
+
+        $notification = array(
+            'message' => 'Profile Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
     private function deleteOldImage(string $oldPhotoPath): void
