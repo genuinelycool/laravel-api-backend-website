@@ -41,7 +41,7 @@
                                             <td><img src="{{ asset($item->image) }}" style="width:70px; height:40px;">
                                             </td>
                                             <td>{{ $item->heading }}</td>
-                                            <td>{{ Str::limit($item->description, 20) }}</td>
+                                            <td>{{ Str::limit($item->description, 30) }}</td>
                                             <td>{{ $item->link }}</td>
                                             <td>
                                                 <a href="" class="btn btn-success btn-sm">Edit</a>
