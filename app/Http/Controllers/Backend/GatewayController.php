@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Gatewayone;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use App\Models\GateWayTwo;
 
 class GatewayController extends Controller
 {
@@ -62,5 +63,12 @@ class GatewayController extends Controller
 
             return redirect()->back()->with($notification);
         }
+    }
+
+    public function GateWayTwo()
+    {
+        $gettwo = GateWayTwo::find(1);
+
+        return view('backend.gateway.gateway_two', compact('gettwo'));
     }
 }

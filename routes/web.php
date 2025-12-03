@@ -50,5 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(GatewayController::class)->group(function () {
         Route::get('/gateway/one', 'GateWayOne')->name('gateway.one');
         Route::post('/update/gateway/one', 'UpdateGateWayOne')->name('update.geteway.one');
+
+        Route::get('/gateway/two', 'GateWayTwo')->name('gateway.two');
     });
 });

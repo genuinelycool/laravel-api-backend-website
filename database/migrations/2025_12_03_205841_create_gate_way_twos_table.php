@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gatewayones', function (Blueprint $table) {
+        Schema::create('gate_way_twos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('phone');
             $table->text('description')->nullable();
+            $table->string('project');
+            $table->string('review');
+            $table->string('experience');
             $table->string('image');
             $table->timestamps();
         });
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gatewayones');
+        Schema::dropIfExists('gate_way_twos');
     }
 };
