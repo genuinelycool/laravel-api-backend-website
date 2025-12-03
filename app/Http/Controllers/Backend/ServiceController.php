@@ -15,4 +15,8 @@ class ServiceController extends Controller
         $service = Service::latest()->get();
         return view('backend.service.all_service', compact('service'));
     }
+
+    public function AddService() {
+        return view('backend.service.add_service');
+    }
 }

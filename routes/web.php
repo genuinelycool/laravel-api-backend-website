@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(ServiceController::class)->group(function () {
         Route::get('/all/service', 'AllService')->name('all.service');
-        Route::get('/add/slider', 'AddSlider')->name('add.slider');
+        Route::get('/add/service', 'AddService')->name('add.service');
         Route::post('/store/slider', 'StoreSlider')->name('store.slider');
         Route::get('/edit/slider/{id}', 'EditSlider')->name('edit.slider');
         Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
