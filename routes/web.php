@@ -52,5 +52,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/gateway/one', 'UpdateGateWayOne')->name('update.geteway.one');
 
         Route::get('/gateway/two', 'GateWayTwo')->name('gateway.two');
+        Route::post('/update/gateway/two', 'UpdateGateWayTwo')->name('update.geteway.two');
     });
 });

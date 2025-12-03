@@ -71,4 +71,55 @@ class GatewayController extends Controller
 
         return view('backend.gateway.gateway_two', compact('gettwo'));
     }
+
+    public function UpdateGateWayTwo(Request $request)
+    {
+        $gettwo_id = $request->id;
+        $gettwo = GateWayTwo::find($gettwo_id);
+
+        if ($request->file('image')) {
+            $image = $request->file('image');
+
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(1414, 1236)->save(public_path('upload/geteway/' . $name_gen));
+            $save_url = 'upload/geteway/' . $name_gen;
+
+            if (file_exists(public_path($gettwo->image))) {
+                unlink(public_path($gettwo->image));
+            }
+
+            $gettwo->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'project' => $request->project,
+                'review' => $request->review,
+                'experience' => $request->experience,
+                'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => 'Updated with Image Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+        } else {
+            $gettwo->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'project' => $request->project,
+                'review' => $request->review,
+                'experience' => $request->experience,
+            ]);
+
+            $notification = array(
+                'message' => 'Updated without Image Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->back()->with($notification);
+        }
+    }
 }
