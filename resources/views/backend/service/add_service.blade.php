@@ -23,7 +23,7 @@
                         </div><!-- end card header -->
 
                         <div class="card-body">
-                            <form id="myForm" action="{{ route('store.slider') }}" method="post" class="row g-3"
+                            <form id="myForm" action="{{ route('store.service') }}" method="post" class="row g-3"
                                 enctype="multipart/form-data">
                                 @csrf
 
