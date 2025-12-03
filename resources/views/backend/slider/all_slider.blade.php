@@ -46,7 +46,8 @@
                                             <td>
                                                 <a href="{{ route('edit.slider', $item->id) }}"
                                                     class="btn btn-success btn-sm">Edit</a>
-                                                <a href="" class="btn btn-danger btn-sm" id="delete">Delete</a>
+                                                <a href="{{ route('delete.slider', $item->id) }}"
+                                                    class="btn btn-danger btn-sm" id="delete">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach
