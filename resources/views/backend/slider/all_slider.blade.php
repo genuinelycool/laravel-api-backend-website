@@ -44,7 +44,8 @@
                                             <td>{{ Str::limit($item->description, 30) }}</td>
                                             <td>{{ $item->link }}</td>
                                             <td>
-                                                <a href="" class="btn btn-success btn-sm">Edit</a>
+                                                <a href="{{ route('edit.slider', $item->id) }}"
+                                                    class="btn btn-success btn-sm">Edit</a>
                                                 <a href="" class="btn btn-danger btn-sm" id="delete">Delete</a>
                                             </td>
                                         </tr>

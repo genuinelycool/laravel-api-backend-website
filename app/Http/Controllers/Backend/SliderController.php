@@ -47,4 +47,14 @@ class SliderController extends Controller
 
         return redirect()->route('all.slider')->with($notification);
     }
+
+    public function EditSlider($id)
+    {
+        $slider = Slider::find($id);
+        return view('backend.slider.edit_slider', compact('slider'));
+    }
+
+    public function UpdateSlider(Request $request) {
+        
+    }
 }
