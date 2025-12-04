@@ -122,7 +122,7 @@
                 <li>
                     <a href="#BlogCategory" data-bs-toggle="collapse">
                         <i data-feather="alert-octagon"></i>
-                        <span> Manage BlogCategory </span>
+                        <span> BlogCategory </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="BlogCategory">

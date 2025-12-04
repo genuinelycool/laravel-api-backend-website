@@ -48,7 +48,7 @@
                                                     Edit
                                                 </button>
 
-                                                <a href="{{ route('delete.testimonial', $item->id) }}"
+                                                <a href="{{ route('delete.blog.category', $item->id) }}"
                                                     class="btn btn-danger btn-sm" id="delete">Delete</a>
                                             </td>
                                         </tr>
@@ -104,8 +104,10 @@
                 </div>
                 <div class="modal-body">
 
-                    <form id="myForm" action="{{ route('blog.category.store') }}" method="post" class="row g-3">
+                    <form id="myForm" action="{{ route('blog.category.update') }}" method="post" class="row g-3">
                         @csrf
+
+                        <input type="hidden" name="cat_id" id="cat_id">
 
                         <div class="col-md-12">
                             <label for="validationDefault01" class="form-label">Category Name</label>
