@@ -13,4 +13,9 @@ class TestimonialController extends Controller
         $testi = Testimonial::latest()->get();
         return view('backend.testimonial.all_testimonial', compact('testi'));
     }
+
+    public function AddTestimonial()
+    {
+        return view('backend.testimonial.add_testimonial');
+    }
 }
