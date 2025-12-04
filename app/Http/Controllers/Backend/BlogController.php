@@ -172,4 +172,20 @@ class BlogController extends Controller
             return redirect()->route('all.blog.post')->with($notification);
         }
     }
+
+    public function DeleteBlogPost($id)
+    {
+        $item = BlogPost::find($id);
+        $img = $item->image;
+        unlink($img);
+
+        BlogPost::find($id)->delete();
+
+        $notification = array(
+            'message' => 'Blog Post Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
 }

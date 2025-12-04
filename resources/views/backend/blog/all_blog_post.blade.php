@@ -46,7 +46,7 @@
                                             <td>
                                                 <a href="{{ route('edit.blog.post', $item->id) }}"
                                                     class="btn btn-success btn-sm">Edit</a>
-                                                <a href="{{ route('delete.service', $item->id) }}"
+                                                <a href="{{ route('delete.blog.post', $item->id) }}"
                                                     class="btn btn-danger btn-sm" id="delete">Delete</a>
                                             </td>
                                         </tr>
