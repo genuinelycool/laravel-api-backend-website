@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\GatewayController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\SettingController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -34,3 +35,6 @@ Route::get('/blogcat', [BlogController::class, 'ApiBlogCat']);
 // Blog Post api
 Route::get('/allblog', [BlogController::class, 'ApiAllBlog']);
 Route::get('/allblog/{slug}', [BlogController::class, 'ApiAllBlogSlug']);
+
+// Site Setting api
+Route::get('/sitesetting', [SettingController::class, 'ApiSiteSetting']);

@@ -8,6 +8,15 @@ use App\Models\SiteSetting;
 
 class SettingController extends Controller
 {
+    // Start Site Setting api
+    public function ApiSiteSetting()
+    {
+        $site = SiteSetting::find(1);
+
+        return $site;
+    }
+    // End Site Setting api
+
     public function SiteSetting()
     {
         $site = SiteSetting::find(1);
