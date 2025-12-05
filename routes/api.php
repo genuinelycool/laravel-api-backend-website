@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\GatewayController;
+use App\Http\Controllers\Backend\TestimonialController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -22,3 +23,6 @@ Route::get('/getewayone', [GatewayController::class, 'ApiGatewayOne']);
 
 // Gateway two api
 Route::get('/getewaytwo', [GatewayController::class, 'ApiGatewayTwo']);
+
+// Testimonial api
+Route::get('/gettestimonial', [TestimonialController::class, 'ApiGetTestimonial']);
