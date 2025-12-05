@@ -10,6 +10,14 @@ use Intervention\Image\Drivers\Imagick\Driver;
 
 class SliderController extends Controller
 {
+    // Start Slider api
+    public function ApiAllSlider()
+    {
+        $slider = Slider::latest()->get();
+        return $slider;
+    }
+    // End Slider api
+
     public function AllSlider()
     {
         $slider = Slider::latest()->get();
