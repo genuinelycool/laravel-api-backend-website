@@ -33,3 +33,4 @@ Route::get('/blogcat', [BlogController::class, 'ApiBlogCat']);
 
 // Blog Post api
 Route::get('/allblog', [BlogController::class, 'ApiAllBlog']);
+Route::get('/allblog/{slug}', [BlogController::class, 'ApiAllBlogSlug']);
