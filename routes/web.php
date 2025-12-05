@@ -87,6 +87,6 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(SettingController::class)->group(function () {
         Route::get('/site/setting', 'SiteSetting')->name('site.setting');
-        Route::post('/update/gateway/one', 'UpdateGateWayOne')->name('update.geteway.one');
+        Route::post('/update/site/setting', 'UpdateSiteSetting')->name('update.site.setting');
     });
 });
