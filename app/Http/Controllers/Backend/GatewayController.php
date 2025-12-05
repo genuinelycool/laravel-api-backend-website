@@ -11,6 +11,22 @@ use App\Models\GateWayTwo;
 
 class GatewayController extends Controller
 {
+    // Start GateWay api
+    public function ApiGatewayOne()
+    {
+        $getone = Gatewayone::find(1);
+
+        return $getone;
+    }
+
+    public function ApiGatewayTwo()
+    {
+        $gettwo = GateWayTwo::find(1);
+
+        return $gettwo;
+    }
+    // End GateWay api
+
     public function GateWayOne()
     {
         $getone = Gatewayone::find(1);
