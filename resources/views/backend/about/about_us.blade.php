@@ -23,7 +23,7 @@
                         </div><!-- end card header -->
 
                         <div class="card-body">
-                            <form action="{{ route('update.geteway.one') }}" method="post" class="row g-3"
+                            <form action="{{ route('update.aboutus') }}" method="post" class="row g-3"
                                 enctype="multipart/form-data">
                                 @csrf
 
