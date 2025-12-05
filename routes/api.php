@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\GatewayController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\AboutPageController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -38,3 +39,6 @@ Route::get('/allblog/{slug}', [BlogController::class, 'ApiAllBlogSlug']);
 
 // Site Setting api
 Route::get('/sitesetting', [SettingController::class, 'ApiSiteSetting']);
+
+// About Us api
+Route::get('/aboutpage', [AboutPageController::class, 'ApiAboutPage']);

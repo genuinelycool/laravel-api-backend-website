@@ -11,6 +11,15 @@ use App\Models\ContactPage;
 
 class AboutPageController extends Controller
 {
+    // Start About us api
+    public function ApiAboutPage()
+    {
+        $about = AboutPage::find(1);
+
+        return $about;
+    }
+    // End About us api
+
     public function AboutPage()
     {
         $about = AboutPage::find(1);
