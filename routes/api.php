@@ -22,10 +22,10 @@ Route::get('/services', [ServiceController::class, 'AllServices']);
 Route::get('/service/{slug}', [ServiceController::class, 'getServiceBySlug']);
 
 // Gateway one api
-Route::get('/getewayone', [GatewayController::class, 'ApiGatewayOne']);
+Route::get('/gatewayone', [GatewayController::class, 'ApiGatewayOne']);
 
 // Gateway two api
-Route::get('/getewaytwo', [GatewayController::class, 'ApiGatewayTwo']);
+Route::get('/gatewaytwo', [GatewayController::class, 'ApiGatewayTwo']);
 
 // Testimonial api
 Route::get('/gettestimonial', [TestimonialController::class, 'ApiGetTestimonial']);
