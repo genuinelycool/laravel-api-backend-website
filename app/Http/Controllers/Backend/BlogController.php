@@ -66,6 +66,16 @@ class BlogController extends Controller
 
         return response()->json($response);
     }
+
+    public function GetBlogsByCategory($category_id)
+    {
+        $blogs = BlogPost::where('blogcat_id', $category_id)
+            ->join('blog_categories', 'blog_posts.blogcat_id', '=', 'blog_categories.id')
+            ->select('blog_posts.*', 'blog_categories.blog_category')
+            ->get();
+
+        return response()->json($blogs);
+    }
     // End Blog All api
 
     public function BlogCategory()
